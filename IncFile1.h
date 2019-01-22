@@ -9,9 +9,107 @@
 #ifndef INCFILE1_H_
 #define INCFILE1_H_
 
-#include <stdlib.h>
+char vector_0[7] = {
+	0b0000000,
+	0b0011110,
+	0b1110011,
+	0b1000001,
+	0b0111111,
+	0b0001110,
+	0b0000000
+};
 
-char A[7] = {
+char vector_1[7] = {
+	0b0000000,
+	0b0000000,
+	0b0110000,
+	0b1111111,
+	0b0000111,
+	0b0000000,
+	0b0000000
+};
+
+char vector_2[7] = {
+	0b0000000,
+	0b0000011,
+	0b1100111,
+	0b1001101,
+	0b1111001,
+	0b0000001,
+	0b0000000
+};
+
+char vector_3[7] = {
+	0b0000000,
+	0b0000010,
+	0b1100011,
+	0b1001001,
+	0b0111111,
+	0b0000110,
+	0b0000000
+};
+
+char vector_4[7] = {
+	0b0000000,
+	0b0001100,
+	0b0011100,
+	0b0110100,
+	0b0111111,
+	0b0000100,
+	0b0000000
+};
+
+char vector_5[7] = {
+	0b0000000,
+	0b0001010,
+	0b1111011,
+	0b1010001,
+	0b1011111,
+	0b0000110,
+	0b0000000
+};
+
+char vector_6[7] = {
+	0b0000000,
+	0b0011110,
+	0b0111011,
+	0b1010001,
+	0b1101111,
+	0b0000110,
+	0b0000000
+};
+
+char vector_7[7] = {
+	0b0000000,
+	0b0000000,
+	0b1000111,
+	0b1011100,
+	0b1110000,
+	0b0000000,
+	0b0000000
+};
+
+char vector_8[7] = {
+	0b0000000,
+	0b0000110,
+	0b1111011,
+	0b1001001,
+	0b0111111,
+	0b0000110,
+	0b0000000
+};
+
+char vector_9[7] = {
+	0b0000000,
+	0b0010010,
+	0b1111111,
+	0b1000101,
+	0b0111111,
+	0b0001110,
+	0b0000000
+};
+
+char vector_A[7] = {
 	0b0000011,
 	0b0000110,
 	0b0111100,
@@ -21,7 +119,7 @@ char A[7] = {
 	0b0000011
 };
 
-char B[7] = {
+char vector_B[7] = {
 	0b0000001,
 	0b0111111,
 	0b1001001,
@@ -31,7 +129,7 @@ char B[7] = {
 	0b0000000
 };
 
-char C[7] = {
+char vector_C[7] = {
 	0b0000000,
 	0b0111110,
 	0b1100011,
@@ -41,7 +139,7 @@ char C[7] = {
 	0b0000000
 };
 
-char D[7] = {
+char vector_D[7] = {
 	0b0000011,
 	0b1111111,
 	0b1000001,
@@ -51,7 +149,7 @@ char D[7] = {
 	0b0000000
 };
 
-char E[7] = {
+char vector_E[7] = {
 	0b0000001,
 	0b0111111,
 	0b1101001,
@@ -61,7 +159,7 @@ char E[7] = {
 	0b0000001
 };
 
-char F[7] = {
+char vector_F[7] = {
 	0b0000000,
 	0b0001111,
 	0b1111100,
@@ -71,7 +169,7 @@ char F[7] = {
 	0b0000000
 };
 
-char G[7] = {
+char vector_G[7] = {
 	0b0001100,
 	0b0111110,
 	0b1100011,
@@ -81,7 +179,7 @@ char G[7] = {
 	0b0000110
 };
 
-char H[7] = {
+char vector_H[7] = {
 	0b0000011,
 	0b1111111,
 	0b0001000,
@@ -91,7 +189,7 @@ char H[7] = {
 	0b0000001
 };
 
-char I[7] = {
+char vector_I[7] = {
 	0b0000000,
 	0b0000000,
 	0b0000000,
@@ -101,7 +199,7 @@ char I[7] = {
 	0b0000000
 };
 
-char J[7] = {
+char vector_J[7] = {
 	0b0000000,
 	0b0000110,
 	0b0000011,
@@ -111,7 +209,7 @@ char J[7] = {
 	0b0000000
 };
 
-char K[7] = {
+char vector_K[7] = {
 	0b0000001,
 	0b0111111,
 	0b1001000,
@@ -121,7 +219,7 @@ char K[7] = {
 	0b0000001
 };
 
-char L[7] = {
+char vector_L[7] = {
 	0b0000000,
 	0b0000111,
 	0b1111111,
@@ -131,7 +229,7 @@ char L[7] = {
 	0b0000000
 };
 
-char M[7] = {
+char vector_M[7] = {
 	0b0001111,
 	0b1111000,
 	0b0111110,
@@ -141,7 +239,7 @@ char M[7] = {
 	0b0000111
 };
 
-char N[7] = {
+char vector_N[7] = {
 	0b0000011,
 	0b1111111,
 	0b1110000,
@@ -151,7 +249,7 @@ char N[7] = {
 	0b0000001
 };
 
-char O[7] = {
+char vector_O[7] = {
 	0b0001100,
 	0b0111110,
 	0b1100001,
@@ -161,7 +259,7 @@ char O[7] = {
 	0b0000000
 };
 
-char P[7] = {
+char vector_P[7] = {
 	0b0000001,
 	0b0111111,
 	0b1001000,
@@ -171,7 +269,7 @@ char P[7] = {
 	0b0000000
 };
 
-char Q[7] = {
+char vector_Q[7] = {
 	0b0001100,
 	0b0111111,
 	0b1100001,
@@ -181,7 +279,7 @@ char Q[7] = {
 	0b0000001
 };
 
-char R[7] = {
+char vector_R[7] = {
 	0b0000011,
 	0b1111111,
 	0b1001000,
@@ -191,7 +289,7 @@ char R[7] = {
 	0b0000011
 };
 
-char S[7] = {
+char vector_S[7] = {
 	0b0000000,
 	0b0110111,
 	0b1111001,
@@ -201,7 +299,7 @@ char S[7] = {
 	0b0000000
 };
 
-char T[7] = {
+char vector_T[7] = {
 	0b0000000,
 	0b1000000,
 	0b1000000,
@@ -211,7 +309,7 @@ char T[7] = {
 	0b0000000
 };
 
-char U[7] = {
+char vector_U[7] = {
 	0b0000000,
 	0b1111111,
 	0b0000001,
@@ -221,7 +319,7 @@ char U[7] = {
 	0b0000000
 };
 
-char V[7] = {
+char vector_V[7] = {
 	0b0000000,
 	0b1100000,
 	0b0011111,
@@ -231,7 +329,7 @@ char V[7] = {
 	0b0000000
 };
 
-char W[7] = {
+char vector_W[7] = {
 	0b1111111,
 	0b0000111,
 	0b0011100,
@@ -241,7 +339,7 @@ char W[7] = {
 	0b1000000
 };
 
-char X[7] = {
+char vector_X[7] = {
 	0b0000001,
 	0b1000010,
 	0b1110110,
@@ -251,7 +349,7 @@ char X[7] = {
 	0b0000001
 };
 
-char Y[7] = {
+char vector_Y[7] = {
 	0b0000000,
 	0b1000000,
 	0b0111000,
@@ -261,7 +359,7 @@ char Y[7] = {
 	0b0000000
 };
 
-char Z[7] = {
+char vector_Z[7] = {
 	0b0000011,
 	0b0000011,
 	0b1000101,
@@ -271,42 +369,7 @@ char Z[7] = {
 	0b0000001
 };
 
-char* litere[] = {A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z};
+char* litere[] = {vector_0, vector_1, vector_2, vector_3, vector_4, vector_5, vector_6, vector_7, vector_8, vector_9, vector_A, vector_B, vector_C, vector_D, vector_E, vector_F, vector_G, vector_H, vector_I, vector_J, vector_K, vector_L, vector_M, vector_N, vector_O, vector_P, vector_Q, vector_R, vector_S, vector_T, vector_U, vector_V, vector_W, vector_X, vector_Y, vector_Z};
 
-char* lista;
-int max;
-
-void processString(char* text){
-	int i=0;
-	char* output = (char*)malloc(sizeof(char)*73);
-	int index=0;
-	while(text[i]!='\0'){
-		if(text[i] >= 'A' && text[i] <= 'Z')
-		{
-			for (int j=0; j<7; j++)
-			{
-				output[index++] = litere[text[i]-'A'][j];
-			}
-				
-		}
-		++i;
-	}
-
-	max = index;
-	output[index]='\n';
-	lista = output;
-}
-
-int myIndex;
-
-char getNext(){	
-	if(myIndex > max) 
-			return 0;
-	return lista[myIndex++];
-}
-
-void resetIndex(){
-	 myIndex = 0;
-	 }
 	
 #endif /* INCFILE1_H_ */

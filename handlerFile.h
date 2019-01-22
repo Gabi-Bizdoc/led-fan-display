@@ -8,17 +8,16 @@
 
 #ifndef HANDLERFILE_H_
 #define HANDLERFILE_H_
+#include "utils.h"
 
 volatile unsigned int count_int0_interrupts;
 
-volatile unsigned int count_timer2_interupts = 0;
-volatile unsigned int count_timer1_interupts = 0;
 volatile unsigned int count_timer0_interupts = 0;
-volatile unsigned int ungiActual = 0xFF;
-volatile unsigned int ungiDorit = 0xFF;
+volatile unsigned int unghiActual = 0xFF;
+volatile unsigned int unghiDorit = 0xFF;
 
 volatile unsigned int sensorDelay;
-volatile int toggle = 1;
+volatile int toggle = 0;
 volatile char cuvant;
 
 volatile unsigned int perioada_dintre_litere = 0xFFFF;
@@ -30,12 +29,12 @@ enum Stari{init, calib, exec};
 volatile enum Stari state = init;
 
 volatile unsigned int test_unghi_dorit = 0xFF;
-volatile int ind = 0;
+
 volatile unsigned int cinci_grade = 0xFF;
 
+void resetIndex();
 
 ISR(INT0_vect){
-	count_timer0_interupts++;
 	switch(state)
 	{
 		case exec:
@@ -43,15 +42,15 @@ ISR(INT0_vect){
 			{
 				if((toggle = !toggle))
 				{
-					time_spend_high = count_timer0_interupts;
+					;
 				}
 				else
 				{
 					time_spend_low = count_timer0_interupts;
 					cinci_grade = (time_spend_low/72);
-					ungiActual = cinci_grade;
-					ungiDorit = cinci_grade*36;
-					ind = 0;
+					unghiActual = cinci_grade;
+					unghiDorit = cinci_grade*36;
+					resetIndex();
 					
 				}
 			}
@@ -61,7 +60,7 @@ ISR(INT0_vect){
 			state = exec;
 			break;
 		case init:
-			TIMSK0 |= (1 << OCIE0A);
+			TIMSK0 |= (1 << OCIE0A); //porneste timerul T0
 			state = calib;
 			break;
 	}
@@ -70,41 +69,18 @@ ISR(INT0_vect){
 
 }
 
+char getNext();
 
 ISR(TIMER0_COMPA_vect){
 	++count_timer0_interupts;
-	if(count_timer0_interupts == ungiActual)
+	if(count_timer0_interupts == unghiActual)
 	{
-		if(ungiActual == ungiDorit)
+		if(unghiActual == unghiDorit)
 		{
-			if(ind < 7)
-			{
-				cuvant = M[ind++];
-			}
-			else
-			{
-				if(ind < 14)
-				{
-					cuvant = U[ind-7];
-					++ind;
-				}
-				else
-					if(ind < 21)
-					{
-						cuvant = I[ind-14];
-						++ind;
-					}
-					else
-						if(ind < 28)
-						{
-							cuvant = E[ind-21];
-							++ind;
-						}
-			}
-			ungiDorit += cinci_grade;
+			cuvant = getNext();
+			unghiDorit += cinci_grade;
 		}
-		ungiActual += cinci_grade;
-		
+		unghiActual += cinci_grade;
 		
 	}
 	else
@@ -113,29 +89,6 @@ ISR(TIMER0_COMPA_vect){
 	}
 	
 }
-
-ISR(TIMER1_COMPA_vect){
-	if(++count_timer1_interupts == perioada_dintre_litere)
-	{
-		count_timer1_interupts = 0;
-		ungiActual++;
-	}
-	if(ungiActual == ungiDorit)
-	{
-		cuvant = 0xFF;
-	}
-	else
-	{
-		cuvant = 0;	
-	}
-}
-
-ISR(TIMER2_COMPA_vect){
-	++count_timer1_interupts;
-	
-}
-
-
 
 
 

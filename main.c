@@ -3,10 +3,9 @@
 #include <string.h>
 #include "IncFile1.h"
 #include "configurationFile.h"
-#include "handlerFile.h"
+#include "utils.h"
 
-volatile char cuvant = 0;
-
+volatile char cuvant = 0; 
 void scrie(char txt){
 	PORTB = (txt >> 2);
 	PORTD = (txt << 6);
@@ -14,7 +13,7 @@ void scrie(char txt){
 
 int main(void)
 {
-	cli();
+	cli(); 
 	DDRB = 0b00011111;
 	DDRD = 0b11000000;
 	processString("TE IUBB");
