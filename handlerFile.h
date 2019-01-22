@@ -18,7 +18,7 @@ volatile unsigned int ungiActual = 0xFF;
 volatile unsigned int ungiDorit = 0xFF;
 
 volatile unsigned int sensorDelay;
-volatile int toggle = 0;
+volatile int toggle = 1;
 volatile char cuvant;
 
 volatile unsigned int perioada_dintre_litere = 0xFFFF;
@@ -41,21 +41,24 @@ ISR(INT0_vect){
 		case exec:
 			if(count_timer0_interupts > sensorDelay)
 			{
-				time_spend_low = count_timer0_interupts;
-				cinci_grade = (time_spend_low/72);
-				ungiActual = cinci_grade;
-				ungiDorit = time_spend_low/2;
-				ind = 0;
+				if((toggle = !toggle))
+				{
+					time_spend_high = count_timer0_interupts;
+				}
+				else
+				{
+					time_spend_low = count_timer0_interupts;
+					cinci_grade = (time_spend_low/72);
+					ungiActual = cinci_grade;
+					ungiDorit = cinci_grade*36;
+					ind = 0;
+					
+				}
 			}
 			break;
 		case calib:
 			sensorDelay = count_timer0_interupts*3;
-			if(toggle)
-			{
-				state = exec;
-				sensorDelay = count_timer0_interupts*2;
-			}
-			toggle = 1;
+			state = exec;
 			break;
 		case init:
 			TIMSK0 |= (1 << OCIE0A);
@@ -86,7 +89,7 @@ ISR(TIMER0_COMPA_vect){
 					++ind;
 				}
 				else
-					if(ind < 14)
+					if(ind < 21)
 					{
 						cuvant = I[ind-14];
 						++ind;

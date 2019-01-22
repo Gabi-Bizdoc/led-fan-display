@@ -17,11 +17,11 @@ int main(void)
 	cli();
 	DDRB = 0b00011111;
 	DDRD = 0b11000000;
+	processString("TE IUBB");
 	int0_setup();
 	timer0_setup();
 //	timer2_setup();
 //	timer1_setup();
-//	getList("A");
 	sei();
 	while (1) {
 		scrie(cuvant);
